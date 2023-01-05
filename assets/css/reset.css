@@ -1,0 +1,36 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+:focus, :active{
+    outline: none;
+}
+
+html, body{
+    min-width: 100vh;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1;
+}
+
+ul, li, ol{
+    list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    vertical-align: top;
+}
