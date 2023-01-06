@@ -1,10 +1,23 @@
-function changeColor(){
-    let array = ["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+function fun(){
+    range__input.innerHTML = range.value;
+}
 
-    var hex_color = '';
-    for(var i = 0; i < 6; i++){
-        var hex_random = Math.floor(Math.random() * array.length);
-        hex_color += array[hex_random];
+function current(){
+    var click=0;
+    if (click != 5){
+        console.log(click++)
+        changeColor();
     }
-    document.getElementsByTagName('body')[0].style.background = "#" + hex_color
+    else{
+        alert('Достигнут лимит')
+    }
+}
+
+function changeColor(){
+    if (range.value > 0){
+        document.querySelector('.color-list').innerHTML += '<li class="color-item"></li>';
+    }
+    else{
+        alert('Выберите диапазон')
+    }
 }
