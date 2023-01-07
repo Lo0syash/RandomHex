@@ -1,5 +1,4 @@
-var element = 5;
-
+element = 0;
 function generateColor(){
     for (var i = 0; i < element; i++){
         var hex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"]
@@ -14,20 +13,28 @@ function generateColor(){
     }
 }
 
-function addBlock(){
-    if(element != 5 && element < 5){
+$('#addNew').click(function(){
+    if (element != 5 && element < 5){
         element++;
-
+        var container = $('#some_id');
+        var li = document.createElement('li');
+        li.innerHTML = 
+                        `
+                        <li class="color-item">
+                            <div class="btn btn--delete">&#128465;</div>
+                        </li>
+                        `;
+        container.append(li)
+        generateColor()
     }
     else{
         alert('Лимит')
     }
-}
+})
 
-
-function deleteBlock(e){
-    var array = [document.querySelector('.color-list')];
-    array.pop();
-
-}
-
+$(document).on('click', '.btn--delete', function(){
+    if (element != 0 && element > 0){
+        element--;
+        $(this).parent().remove();
+    }
+})

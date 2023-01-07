@@ -61,7 +61,6 @@
 .color-list{
     display: flex;
     justify-content: space-between;
-    max-width: 1400px;
     gap: 5px;
 }
 
@@ -71,6 +70,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #999;
 }
 
 .color-item:hover .btn--delete{
@@ -123,6 +123,8 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    position: absolute;
+    top: 700px;
 }
 
 /* ============ FOOTER ============ */

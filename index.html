@@ -28,36 +28,19 @@
             <section class="color">
                 <div class="container color--container">
                     <div class="color__inner">
-                        <ul class="color-list">
-                            <li class="color-item">
-                                <div class="btn btn--delete" onclick="deleteBlock()">&#128465;</div>
-                            </li>
-                            <li class="color-item">
-                                <div class="btn btn--delete" onclick="deleteBlock()">&#128465;</div>
-                            </li>
-                            <li class="color-item">
-                                <div class="btn btn--delete" onclick="deleteBlock()">&#128465;</div>
-                            </li>
-                            <li class="color-item">
-                                <div class="btn btn--delete" onclick="deleteBlock()">&#128465;</div>
-                            </li>
-                            <li class="color-item">
-                                <div class="btn btn--delete" onclick="deleteBlock()">&#128465;</div>
-                            </li>
-                        </ul>
+                        <ul class="color-list" id="some_id"></ul>
                         <div class="color-content">
                             <div class="btn-box">
                                 <div class="btn btn--generate" onclick="generateColor()">Сгенерировать</div>
-                                <div class="btn btn--add" onclick="addBlock()">&#43;</div>
+                                <div class="btn btn--add" id="addNew">&#43;</div>
                             </div>
-                            <div id="range__input"></div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
