@@ -68,11 +68,23 @@
 .color-item{
     width: 300px;
     height: 500px;
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-item:hover .btn--delete{
+    opacity: 1;
+}
+
+.btn-box{
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .btn--generate{
-    width: 130px;
+    width: 150px;
     height: 40px;
     border-radius: 7px;
     background-color: #192252;
@@ -81,6 +93,30 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.btn--add{
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    background-color: #c9c9c9;
+    cursor: pointer;
+}
+
+.btn--delete{
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    background-color: #c9c9c9;
+    cursor: pointer;
+    opacity: 0;
+    transition: .6s;
 }
 
 .color-content{

@@ -29,11 +29,27 @@
                 <div class="container color--container">
                     <div class="color__inner">
                         <ul class="color-list">
-
+                            <li class="color-item">
+                                <div class="btn btn--delete" onclick="deleteBlock()">&#128465;</div>
+                            </li>
+                            <li class="color-item">
+                                <div class="btn btn--delete" onclick="deleteBlock()">&#128465;</div>
+                            </li>
+                            <li class="color-item">
+                                <div class="btn btn--delete" onclick="deleteBlock()">&#128465;</div>
+                            </li>
+                            <li class="color-item">
+                                <div class="btn btn--delete" onclick="deleteBlock()">&#128465;</div>
+                            </li>
+                            <li class="color-item">
+                                <div class="btn btn--delete" onclick="deleteBlock()">&#128465;</div>
+                            </li>
                         </ul>
-                        <div class="btn btn--generate" onclick="current()">Generate</div>
                         <div class="color-content">
-                            <input type="range" max="5" id="range" oninput="fun()" class="range">
+                            <div class="btn-box">
+                                <div class="btn btn--generate" onclick="generateColor()">Сгенерировать</div>
+                                <div class="btn btn--add" onclick="addBlock()">&#43;</div>
+                            </div>
                             <div id="range__input"></div>
                         </div>
                     </div>
