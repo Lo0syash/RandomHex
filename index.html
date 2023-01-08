@@ -10,15 +10,21 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="modal__wrapper">
+        <div class="modal__window">
+            <div class="modal__window-inner"></div>
+        </div>
+        <div class="overlay" onclick="remove()"></div>
+    </div>
+    <div class="wrapper block">
         <header class="header">
             <div class="container">
                 <div class="header__inner">
                     <div class="logotype">Colorest</div>
                     <nav class="nav">
                         <ul class="nav-list">
-                            <li class="nav-item"><a href="#" class="nav-link">О нас</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Как это работает</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link about" onclick="add()">О нас</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link how--work" onclick="add()">Как это работает</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -39,6 +45,14 @@
                 </div>
             </section>
         </main>
+        <footer class="footer">
+            <div class="footer__inner">
+                <a href="https:/t.me/ezGamez" class="footer-link">
+                    <img src="assets/images/telegram-icon.png" alt="icon" class="telegram-icon">
+                    <p class="telegram-text">Lo0syash</p>
+                </a>
+            </div>
+        </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
