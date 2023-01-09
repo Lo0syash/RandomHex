@@ -11,9 +11,10 @@ function generateColor(){
             hex__color += hex[random__index];
         }
         var colorItem = document.getElementsByClassName('color-item');
-        console.log(hex__color)
         colorItem[i].style.backgroundColor = '#' + hex__color;
+        copyColor(colorItem)
     }
+
 }
 
 $('#addNew').click(function(){
@@ -25,13 +26,14 @@ $('#addNew').click(function(){
                         `
                         <li class="color-item">
                             <div class="btn btn--delete">&#128465;</div>
+                            <div class="btn btn__copy" onclick="copyColor()">&#10697;</div>
                         </li>
                         `;
         container.append(li)
         generateColor()
     }
     else{
-        alert('Лимит')
+        notification();
     }
 })
 
@@ -42,6 +44,9 @@ $(document).on('click', '.btn--delete', function(){
     }
 })
 
+function copyColor(colorItem){
+    navigator.clipboard.writeText(colorItem.value);
+}
 // ================ MODAL WINDOW
 // ================ MODAL WINDOW
 
@@ -53,31 +58,31 @@ function remove(){
     document.querySelector('.modal__wrapper').classList.remove('active')
 }
 
-$(document).on('click', '.about', function(){
-    const aboutText = document.querySelector('.modal__window-inner');
-    aboutText.innerHTML='';
-    aboutText.innerHTML = 
-    `
-    <div class="btn__overlay" onclick="remove()"></div>
-    <p class="modal__window-text" style="text-align: center; font-size: 25px; line-height: 30px;">
-        Я просто учу такой язык JavaScript<br>
-        и это один из моих проектов.
-    </p>
-    `
-});
-
 $(document).on('click', '.how--work', function(){
-    const aboutText = document.querySelector('.modal__window-inner');
-    aboutText.innerHTML='';
-    aboutText.innerHTML = 
+    const aboutContainer = document.querySelector('.modal__window-inner');
+    aboutContainer.innerHTML='';
+    aboutContainer.innerHTML = 
     `
     <div class="btn__overlay" onclick="remove()"></div>
     <p class="modal__window-text">
         Все очень просто.<br>
-        Чтобы появились колонки с цветами нажмите на "+". Максимум 5.<br>
+        Чтобы появились колонки с цветами нажмите на "+".<br>
         Удалять вы их можете наводясь на них.<br>
         Нажимая на кнопку "Сгенерировать" появляются
         цвета рандомной генерации.
     </p>
     `
 });
+
+// ================ NOTIFICATION
+// ================ NOTIFICATION
+
+function notification(){
+    const notificationContainer = document.querySelector('.notification__inner');
+    notificationContainer.innerHTML = '';
+    notificationContainer.innerHTML = `Максимум 5 цветов`;
+    document.querySelector('.notification-wrapper').classList.add('active')
+    setTimeout(function() {
+        document.querySelector('.notification-wrapper').classList.remove('active')
+    }, 2000);
+}

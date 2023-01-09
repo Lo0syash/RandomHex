@@ -139,15 +139,17 @@
     width: 300px;
     height: 500px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    gap: 24px;
     align-items: center;
     border: 1px solid #999;
 }
 
-.color-item:hover .btn--delete{
+.color-item:hover .btn--delete,
+.color-item:hover .btn__copy{
     opacity: 1;
 }
-
 
 .btn-box{
     display: flex;
@@ -179,7 +181,8 @@
     cursor: pointer;
 }
 
-.btn--delete{
+.btn--delete,
+.btn__copy{
     width: 35px;
     height: 35px;
     border-radius: 5px;
@@ -196,6 +199,41 @@
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.hex__color{
+    font-size: 22px;
+    color: #000;
+    font-weight: 600;
+}
+
+/* ============ NOTIFICATION ============ */
+/* ============ NOTIFICATION ============ */
+
+.notification-wrapper{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    transition: .6s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.notification-wrapper.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.notification__inner{
+    width: 220px;
+    height: 50px;
+    background-color: #192252;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
 }
 
 /* ============ FOOTER ============ */
@@ -217,4 +255,114 @@
     font-size: 22px;
     font-weight: 600;
     color: #000;
+}
+
+/* ============ MEDIA ============ */
+/* ============ MEDIA ============ */
+
+/* ============ 1500 ============ */
+/* ============ 1500 ============ */
+@media (max-width: 1500px) {
+    .container{
+        max-width: 1200px;
+    }
+
+        
+    .color-list{
+        height: 400px;
+    }
+    
+    .color-item{
+        width: 225px;
+        height: 400px;
+    }
+}
+
+/* ============ 1200 ============ */
+/* ============ 1200 ============ */
+
+@media (max-width: 1200px) {
+    .container{
+        max-width: 750px;
+    }
+    
+    .color-list{
+        height: 250px;
+    }
+    
+    .color-item{
+        width: 150px;
+        height: 250px;
+    }
+}
+
+/* ============ 750 ============ */
+/* ============ 750 ============ */
+
+@media (max-width: 750px) {
+    .container{
+        max-width: 500px;
+    }
+    
+    .color-list{
+        height: 200px;
+    }
+    
+    .color-item{
+        width: 100px;
+        height: 200px;
+    }
+
+    .logotype{
+        font-size: 28px;
+    }
+
+    .nav-link{
+        font-size: 17px;
+    }
+
+    .notification__inner{
+        width: 150px;
+        height: 35px;
+        border-radius: 7px;
+        font-size: 15px;
+    }
+}
+
+/* ============ 500 ============ */
+/* ============ 500 ============ */
+
+@media (max-width: 500px) {
+    .container{
+        max-width: 320px;
+    }
+
+    .header__inner{
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .color-list{
+        flex-direction: column;
+        align-items: center;
+        height: inherit;
+    }
+
+    .color-item{
+        width: 250px;
+        height: 300px;
+    }
+
+    .modal__window{
+        width: 320px;
+        padding: 15px;
+    }
+
+    .modal__window-text{
+        font-size: 14px;
+    }
+
+    .notification-wrapper{
+        position: fixed;
+    }
 }
