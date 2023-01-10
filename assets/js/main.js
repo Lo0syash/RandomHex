@@ -1,7 +1,12 @@
+// ================ ADVERT VARIABLE
+// ================ ADVERT VARIABLE
+
+element = 0;
+var message = "";
+
 // ================ GENERATE COLOR
 // ================ GENERATE COLOR
 
-element = 0;
 function generateColor(){
     for (var i = 0; i < element; i++){
         var hex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"]
@@ -12,12 +17,11 @@ function generateColor(){
         }
         var colorItem = document.getElementsByClassName('color-item');
         colorItem[i].style.backgroundColor = '#' + hex__color;
-        copyColor(colorItem)
+        console.log(colorItem[i].attributes[1].nodeValue)
     }
-
 }
 
-$('#addNew').click(function(){
+function addColor(){
     if (element != 5 && element < 5){
         element++;
         var container = $('#some_id');
@@ -26,16 +30,16 @@ $('#addNew').click(function(){
                         `
                         <li class="color-item">
                             <div class="btn btn--delete">&#128465;</div>
-                            <div class="btn btn__copy" onclick="copyColor()">&#10697;</div>
                         </li>
                         `;
         container.append(li)
         generateColor()
     }
     else{
-        notification();
+        message = "Максимум 5 колонок"
+        notification(message);
     }
-})
+}
 
 $(document).on('click', '.btn--delete', function(){
     if (element != 0 && element > 0){
@@ -44,9 +48,18 @@ $(document).on('click', '.btn--delete', function(){
     }
 })
 
-function copyColor(colorItem){
-    navigator.clipboard.writeText(colorItem.value);
-}
+document.addEventListener('keydown', ()=>{
+    if(event.code == 'Space'){
+        if (element === 0){
+            message = "Нету колонки!"
+            notification(message)
+        }
+        else{
+            generateColor();
+        }
+    }
+})
+
 // ================ MODAL WINDOW
 // ================ MODAL WINDOW
 
@@ -77,10 +90,10 @@ $(document).on('click', '.how--work', function(){
 // ================ NOTIFICATION
 // ================ NOTIFICATION
 
-function notification(){
+function notification(message){
     const notificationContainer = document.querySelector('.notification__inner');
     notificationContainer.innerHTML = '';
-    notificationContainer.innerHTML = `Максимум 5 цветов`;
+    notificationContainer.innerHTML = message;
     document.querySelector('.notification-wrapper').classList.add('active')
     setTimeout(function() {
         document.querySelector('.notification-wrapper').classList.remove('active')
